@@ -1,0 +1,33 @@
+﻿<Window x:Class="lianliankan.InfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Infomation" Height="450" Width="550" Name="infowindow" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}" MouseUp="infowindow_MouseUp" MouseMove="infowindow_MouseMove" MouseDown="infowindow_MouseDown" MouseLeave="infowindow_MouseLeave" Topmost="False" Icon="/lianliankan1;component/Images/app64.png" Loaded="infowindow_Loaded">
+    <Grid Width="500" Height="400" Name="main">
+        <Grid.Background>
+            <ImageBrush ImageSource="/lianliankan1;component/Images/help.png" />
+        </Grid.Background>
+        <Label Height="30" HorizontalAlignment="Left" Margin="40,40,0,0" Name="button" VerticalAlignment="Top" Width="30" MouseMove="button_MouseMove" MouseLeave="button_MouseLeave" MouseUp="button_MouseUp" Opacity="1">
+            <Label.Background>
+                <ImageBrush ImageSource="/lianliankan1;component/Images/infoclose.png" />
+            </Label.Background>
+        </Label>
+        <Grid.Triggers>
+            <EventTrigger RoutedEvent="Grid.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation
+                        Storyboard.TargetName="main"
+                        Storyboard.TargetProperty="Width"
+                        From="0" To="500" Duration="0:0:0.5"
+                        />
+                        <DoubleAnimation
+                        Storyboard.TargetName="main"
+                        Storyboard.TargetProperty="Height"
+                        From="0" To="400" Duration="0:0:0.5"
+                        />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Grid.Triggers>
+    </Grid>
+</Window>
